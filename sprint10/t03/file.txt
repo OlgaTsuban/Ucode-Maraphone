@@ -1,0 +1,21 @@
+Hello world
+int file = open(filename, O_RDONLY);
+if (file < 0)return NULL;int len = 0;char c;while (read(file, &c, 1) != 0)
+        len++;
+
+    close(file);
+
+    file = open(filename, O_RDONLY);
+
+    char *text = mx_strnew(len);
+    read(file, text, len);
+
+    close(file);
+
+    return text;
+}
+
+int main(int n, char **s) {
+   if (n < 2) return 0;
+    //*s[] = {"file.txt"};
+   char *s1 = mx_file_to_str(s[1])
